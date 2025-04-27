@@ -89,15 +89,14 @@ export default function EntryDetailsScreen({ route, navigation }) {
       {entry.audioPath && (
         <View style={GlobalStyles.entry.mediaBlock}>
 
+        <View style={{ flexDirection: 'row', alignItems: 'center', marginRight:50 }}>
+
           {/* Play/pause button */}
           <TouchableOpacity
             style={GlobalStyles.entry.audioButton}
             onPress={toggleAudioPlayback}
           >
             <Ionicons name={isPlaying ? 'pause' : 'play'} size={24} color="white" />
-            <Text style={GlobalStyles.entry.audioButtonText}>
-              {isPlaying ? 'Pause' : 'Play'} Recording
-            </Text>
           </TouchableOpacity>
 
           {/* Progress bar */}
@@ -126,6 +125,8 @@ export default function EntryDetailsScreen({ route, navigation }) {
                 }}
               />
             </View>
+            </View>
+            
           </View>
         </View>
       )}

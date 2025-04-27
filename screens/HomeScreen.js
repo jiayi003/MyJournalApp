@@ -42,7 +42,7 @@ export default function HomeScreen({ navigation }) {
         setEntries(parsedEntries);
       } else {
         setEntries([]); // no data is found, sets entries to an empty array
-      }
+      } 
       setLoading(false);
     });
 
