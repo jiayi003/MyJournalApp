@@ -4,14 +4,15 @@ import { getDatabase } from 'firebase/database';
 import { getAuth } from 'firebase/auth';
 
 const firebaseConfig = {
-  apiKey: "AIzaSyBXuJKViKj8i99YAADKi_c3KD0w_uDT1Tg",
-  authDomain: "mobile-75ca4.firebaseapp.com",
-  databaseURL: "https://mobile-75ca4-default-rtdb.firebaseio.com",
-  projectId: "mobile-75ca4",
-  storageBucket: "mobile-75ca4.firebasestorage.app",
-  messagingSenderId: "162799376244",
-  appId: "1:162799376244:web:a8ae82641912fd3c0c3e21"
+  apiKey: process.env.EXPO_PUBLIC_FIREBASE_API_KEY,
+  authDomain: process.env.EXPO_PUBLIC_FIREBASE_AUTH_DOMAIN,
+  databaseURL: process.env.EXPO_PUBLIC_FIREBASE_DATABASE_URL,
+  projectId: process.env.EXPO_PUBLIC_FIREBASE_PROJECT_ID,
+  storageBucket: process.env.EXPO_PUBLIC_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: process.env.EXPO_PUBLIC_FIREBASE_MESSAGING_SENDER_ID,
+  appId: process.env.EXPO_PUBLIC_FIREBASE_APP_ID
 };
+
 const app = initializeApp(firebaseConfig);
 
 const db = getDatabase(app);
@@ -19,3 +20,4 @@ const firestore = getFirestore(app);
 const auth = getAuth(app);
 
 export { db, firestore, auth };
+

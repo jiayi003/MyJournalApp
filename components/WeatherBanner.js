@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { View, Text, ActivityIndicator } from 'react-native';
 import * as Location from 'expo-location';
 
-const API_KEY = 'bd9098671e0401802b6dc27d4e4cad50'; // Replace with your OpenWeatherMap API key
+const API_KEY = process.env.EXPO_PUBLIC_WEATHER_API_KEY;
 
 export default function WeatherBanner({ onWeatherFetched }) {
   const [weather, setWeather] = useState(null);
